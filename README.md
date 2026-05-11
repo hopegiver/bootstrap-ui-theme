@@ -39,6 +39,8 @@ Bootstrap UI Theme bridges that gap — you get the look and feel of those desig
 | **shadcn/ui** | [shadcn.html](https://unpkg.com/bootstrap-ui-theme/dist/shadcn.html) |
 | **NuxtUI v4** | [nuxtui.html](https://unpkg.com/bootstrap-ui-theme/dist/nuxtui.html) |
 
+![Bootstrap UI Theme Screenshot](https://unpkg.com/bootstrap-ui-theme/dist/screenshot.png)
+
 ---
 
 ## Usage
