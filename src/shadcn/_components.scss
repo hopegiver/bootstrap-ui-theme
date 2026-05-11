@@ -1,0 +1,659 @@
+// ============================================
+// shadcn/ui Theme — Bootstrap 기존 클래스 속성만 오버라이드
+// ============================================
+
+:root {
+  // ── CSS Variables ───────────────────────────
+  --shadcn-bg:           #{$shadcn-bg};
+  --shadcn-fg:           #{$shadcn-fg};
+  --shadcn-card:         #{$shadcn-card-bg};
+  --shadcn-card-fg:      #{$shadcn-card-fg};
+  --shadcn-primary:      #{$shadcn-primary};
+  --shadcn-primary-fg:   #{$shadcn-primary-fg};
+  --shadcn-secondary:    #{$shadcn-secondary};
+  --shadcn-secondary-fg: #{$shadcn-secondary-fg};
+  --shadcn-muted:        #{$shadcn-muted};
+  --shadcn-muted-fg:     #{$shadcn-muted-fg};
+  --shadcn-accent:       #{$shadcn-accent};
+  --shadcn-accent-fg:    #{$shadcn-accent-fg};
+  --shadcn-destructive:  #{$shadcn-destructive};
+  --shadcn-border:       #{$shadcn-border};
+  --shadcn-ring:         #{$shadcn-ring};
+
+  // ── Base ────────────────────────────────────
+  font-family: $shadcn-font-family;
+  font-size: $shadcn-font-size-base;
+  color: var(--shadcn-fg);
+  background-color: var(--shadcn-bg);
+
+  // Bootstrap text-secondary → shadcn muted-foreground (#71717a)
+  // $secondary가 배경색(#f4f4f5)으로 매핑되어 있어 text-secondary가 거의 흰색이 됨
+  .text-secondary { color: var(--shadcn-muted-fg) !important; }
+
+  // ── Buttons ─────────────────────────────────
+  .btn {
+    border-radius: $shadcn-radius-md;
+    font-size: 0.875rem;
+    font-weight: 500;
+    height: 2.5rem;
+    padding: 0 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    box-shadow: none;
+
+    &:active { opacity: 0.9; }
+
+    // 공식: default   — bg-primary text-primary-foreground hover:bg-primary/90
+    &-primary {
+      background: var(--shadcn-primary);
+      color: var(--shadcn-primary-fg);
+      border-color: var(--shadcn-primary);
+      box-shadow: none;
+      &:hover { background: lighten($shadcn-primary, 12%); border-color: lighten($shadcn-primary, 12%); color: var(--shadcn-primary-fg); }
+    }
+    // 공식: secondary — bg-secondary text-secondary-foreground hover:bg-secondary/80
+    &-secondary {
+      background: var(--shadcn-secondary);
+      color: var(--shadcn-secondary-fg);
+      border-color: var(--shadcn-secondary);
+      box-shadow: none;
+      &:hover { background: darken($shadcn-secondary, 4%); color: var(--shadcn-secondary-fg); }
+    }
+    // 공식: outline   — border border-input bg-background hover:bg-accent (no shadow)
+    &-outline-primary {
+      background: var(--shadcn-bg);
+      color: var(--shadcn-fg);
+      border-color: var(--shadcn-border);
+      box-shadow: none;
+      &:hover { background: var(--shadcn-accent); color: var(--shadcn-accent-fg); border-color: var(--shadcn-border); }
+      &.active { background: var(--shadcn-secondary); color: var(--shadcn-secondary-fg); }
+    }
+    // 공식: ghost     — hover:bg-accent hover:text-accent-foreground (Bootstrap 미지원, 불가피한 커스텀)
+    &-ghost {
+      background: transparent;
+      color: var(--shadcn-fg);
+      border-color: transparent;
+      box-shadow: none;
+      &:hover { background: var(--shadcn-accent); color: var(--shadcn-accent-fg); border-color: transparent; }
+    }
+    // 공식: destructive — bg-destructive text-white hover:bg-destructive/90
+    &-danger {
+      background: var(--shadcn-destructive);
+      color: #fff;
+      border-color: var(--shadcn-destructive);
+      box-shadow: none;
+      &:hover { background: darken($shadcn-destructive, 8%); border-color: darken($shadcn-destructive, 8%); }
+    }
+    // 공식: link      — text-primary underline-offset-4 hover:underline
+    &-link {
+      background: none;
+      border-color: transparent;
+      box-shadow: none;
+      color: var(--shadcn-fg);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      &:hover { color: var(--shadcn-muted-fg); }
+    }
+
+    &-sm { height: 2rem; padding: 0 0.75rem; font-size: 0.875rem; border-radius: $shadcn-radius-md; }
+    &-lg { height: 2.75rem; padding: 0 2rem; font-size: 1rem; border-radius: $shadcn-radius-md; }
+    &-icon { width: 2.5rem; height: 2.5rem; padding: 0; }
+  }
+
+  // ── Button Group ────────────────────────────
+  .btn-group {
+    > .btn { border-radius: 0; }
+    > .btn:first-child { border-radius: $shadcn-radius-md 0 0 $shadcn-radius-md; }
+    > .btn:last-child  { border-radius: 0 $shadcn-radius-md $shadcn-radius-md 0; }
+  }
+
+  // ── Card ────────────────────────────────────
+  .card {
+    background: var(--shadcn-card);
+    color: var(--shadcn-card-fg);
+    border-color: var(--shadcn-border);
+    border-radius: $shadcn-radius-xl;
+    box-shadow: $shadcn-shadow-sm;
+
+    &-title       { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; } // 공식: font-semibold
+    &-description { font-size: 0.875rem; color: var(--shadcn-muted-fg); }
+    &-header      { font-weight: 600; border-bottom-color: var(--shadcn-border); background: var(--shadcn-card); }
+    &-footer      { border-top-color: var(--shadcn-border); background: var(--shadcn-card); }
+  }
+
+  // ── Table ────────────────────────────────────
+  .card:has(> .card-body.p-0) { overflow: hidden; }
+
+  .table {
+    font-size: 0.875rem;
+    --bs-table-color:          var(--shadcn-fg);
+    --bs-table-bg:             var(--shadcn-card);
+    --bs-table-border-color:   var(--shadcn-border);
+    --bs-table-hover-bg:       var(--shadcn-accent);
+    --bs-table-striped-bg:     var(--shadcn-secondary);
+
+    thead th {
+      font-weight: 500;
+      font-size: 0.8125rem;
+      color: var(--shadcn-muted-fg);
+      border-bottom-color: var(--shadcn-border);
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    td, th { border-color: var(--shadcn-border); }
+  }
+
+  // ── Forms ───────────────────────────────────
+  .form-control,
+  .form-select {
+    background-color: transparent;
+    color: var(--shadcn-fg);
+    border-color: var(--shadcn-border);
+    border-radius: $shadcn-radius-md;
+    font-size: 0.875rem;
+    height: 2.25rem;
+    padding: 0 0.75rem;
+    box-shadow: $shadcn-shadow-xs;
+
+    &::placeholder { color: var(--shadcn-muted-fg); }
+    &:focus {
+      border-color: var(--shadcn-ring);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--shadcn-ring) 50%, transparent);
+      background-color: transparent;
+      color: var(--shadcn-fg);
+    }
+    &:disabled { opacity: 0.5; cursor: not-allowed; background-color: var(--shadcn-secondary); }
+  }
+
+  textarea.form-control { height: auto; padding: 0.5rem 0.75rem; }
+
+  .form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--shadcn-fg);
+    margin-bottom: 0.375rem;
+  }
+
+  .form-check-input {
+    background-color: var(--shadcn-bg);
+    border-color: var(--shadcn-border);
+    &:checked {
+      background-color: var(--shadcn-primary);
+      border-color: var(--shadcn-primary);
+    }
+    &:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--shadcn-ring) 50%, transparent); }
+  }
+
+  .form-check-label { font-size: 0.875rem; color: var(--shadcn-fg); }
+
+  .form-floating > label { color: var(--shadcn-muted-fg); }
+
+  .input-group-text {
+    background-color: var(--shadcn-secondary);
+    border-color: var(--shadcn-border);
+    color: var(--shadcn-muted-fg);
+    font-size: 0.875rem;
+  }
+
+  .valid-feedback   { font-size: 0.8125rem; color: #16a34a; }
+  .invalid-feedback { font-size: 0.8125rem; color: var(--shadcn-destructive); }
+
+  // ── Badge ────────────────────────────────────
+  .badge {
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.125rem 0.625rem;
+
+    &.bg-primary   { background: var(--shadcn-primary) !important;   color: var(--shadcn-primary-fg); }
+    &.bg-secondary { background: var(--shadcn-secondary) !important; color: var(--shadcn-secondary-fg); border: 1px solid var(--shadcn-border); }
+    &.bg-danger    { background: var(--shadcn-destructive) !important; color: #fafafa; }
+    &.bg-outline   { background: transparent !important; color: var(--shadcn-fg); border: 1px solid var(--shadcn-border); }
+  }
+
+  // ── Navbar ───────────────────────────────────
+  // Bootstrap에 navbar 배경 variant가 없어 불가피한 커스텀 클래스 (chip/avatar/divider와 동일 예외)
+  .navbar-hero {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--shadcn-border);
+    box-shadow: none;
+
+    .navbar-brand { font-weight: 600; font-size: 0.9375rem; color: var(--shadcn-fg); letter-spacing: -0.01em; }
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--shadcn-muted-fg);
+      border-radius: $shadcn-radius-sm;
+      padding: 0.375rem 0.625rem;
+      &:hover, &.active { color: var(--shadcn-fg); background: var(--shadcn-accent); }
+    }
+  }
+
+  // ── Accordion ───────────────────────────────
+  .accordion-item {
+    background-color: var(--shadcn-card);
+    border-color: var(--shadcn-border);
+  }
+
+  .accordion-button {
+    background-color: var(--shadcn-card);
+    color: var(--shadcn-fg);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    box-shadow: none;
+    &:not(.collapsed) { background-color: var(--shadcn-card); color: var(--shadcn-fg); box-shadow: none; }
+    &:focus { box-shadow: none; }
+  }
+
+  .accordion-body { font-size: 0.875rem; border-top: 1px solid var(--shadcn-border); }
+
+  // ── Breadcrumb ──────────────────────────────
+  .breadcrumb {
+    font-size: 0.875rem;
+    &-item {
+      a { color: var(--shadcn-muted-fg); text-decoration: none;
+        &:hover { color: var(--shadcn-fg); text-decoration: underline; text-underline-offset: 3px; }
+      }
+      &.active { color: var(--shadcn-fg); font-weight: 500; }
+      + .breadcrumb-item::before { color: var(--shadcn-muted-fg); }
+    }
+  }
+
+  // ── Dropdown ────────────────────────────────
+  .dropdown-menu {
+    background-color: var(--shadcn-card);
+    border-color: var(--shadcn-border);
+    border-radius: $shadcn-radius-lg;
+    box-shadow: $shadcn-shadow-md;
+    padding: 0.25rem;
+    font-size: 0.875rem;
+  }
+
+  .dropdown-item {
+    border-radius: $shadcn-radius-sm;
+    color: var(--shadcn-fg);
+    font-size: 0.875rem;
+    padding: 0.4rem 0.625rem;
+    &:hover, &:focus { background-color: var(--shadcn-accent); color: var(--shadcn-accent-fg); }
+    &.active, &:active { background-color: var(--shadcn-primary); color: var(--shadcn-primary-fg); }
+    &.disabled { color: var(--shadcn-muted-fg); opacity: 0.5; }
+  }
+
+  .dropdown-header {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--shadcn-muted-fg);
+    padding: 0.375rem 0.625rem 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .dropdown-divider { border-color: var(--shadcn-border); margin: 0.25rem; }
+
+  // ── List Group ──────────────────────────────
+  .list-group-item {
+    background-color: var(--shadcn-card);
+    border-color: var(--shadcn-border);
+    color: var(--shadcn-fg);
+    font-size: 0.875rem;
+    &.active { background-color: var(--shadcn-primary); border-color: var(--shadcn-primary); color: var(--shadcn-primary-fg); }
+    &.disabled { color: var(--shadcn-muted-fg); opacity: 0.5; background-color: var(--shadcn-card); }
+  }
+
+  .list-group-item-action {
+    &:not(.active):hover, &:not(.active):focus { background-color: var(--shadcn-accent); color: var(--shadcn-accent-fg); }
+  }
+
+  // ── Nav / Tabs ───────────────────────────────
+  .nav-tabs {
+    border-bottom-color: var(--shadcn-border);
+    .nav-link {
+      border-color: transparent;
+      color: var(--shadcn-muted-fg);
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      border-radius: 0;
+      margin-bottom: -1px;
+      &:hover { color: var(--shadcn-fg); border-bottom-color: var(--shadcn-border); background: none; }
+      &.active { color: var(--shadcn-fg); border-bottom-color: var(--shadcn-primary); background: none; border-top-color: transparent; border-left-color: transparent; border-right-color: transparent; }
+      &.disabled { color: var(--shadcn-muted-fg); opacity: 0.4; }
+    }
+  }
+
+  .nav-pills .nav-link {
+    border-radius: $shadcn-radius-md;
+    color: var(--shadcn-muted-fg);
+    font-size: 0.875rem;
+    font-weight: 500;
+    &:hover { background-color: var(--shadcn-accent); color: var(--shadcn-accent-fg); }
+    &.active { background-color: var(--shadcn-primary); color: var(--shadcn-primary-fg); }
+    &.disabled { color: var(--shadcn-muted-fg); opacity: 0.4; }
+  }
+
+  .nav-underline .nav-link {
+    color: var(--shadcn-muted-fg);
+    font-size: 0.875rem;
+    &:hover { color: var(--shadcn-fg); }
+    &.active { color: var(--shadcn-fg); border-bottom-color: var(--shadcn-primary); }
+  }
+
+  .tab-content { font-size: 0.875rem; }
+
+  // ── Pagination ──────────────────────────────
+  .page-link {
+    background-color: transparent;
+    border-color: var(--shadcn-border);
+    color: var(--shadcn-fg);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: $shadcn-radius-md;
+    min-width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    &:hover { background-color: var(--shadcn-accent); border-color: var(--shadcn-border); color: var(--shadcn-fg); }
+    &:focus  { box-shadow: 0 0 0 3px color-mix(in srgb, var(--shadcn-ring) 50%, transparent); }
+  }
+
+  .page-item {
+    margin: 0 0.125rem;
+    &.active .page-link { background-color: var(--shadcn-primary); border-color: var(--shadcn-primary); color: var(--shadcn-primary-fg); }
+    &.disabled .page-link { color: var(--shadcn-muted-fg); opacity: 0.4; background-color: transparent; }
+  }
+
+  // ── Alert ────────────────────────────────────
+  .alert {
+    border-radius: $shadcn-radius-lg;
+    font-size: 0.875rem;
+    border-width: 1px;
+
+    &-primary    { background-color: #f4f4f5; color: var(--shadcn-fg); border-color: var(--shadcn-border); }
+    &-success    { background-color: #f0fdf4; color: #15803d; border-color: #bbf7d0; }
+    &-warning    { background-color: #fffbeb; color: #92400e; border-color: #fde68a; }
+    &-danger     { background-color: #fef2f2; color: #991b1b; border-color: #fecaca; }
+    &-info       { background-color: #eff6ff; color: #1e40af; border-color: #bfdbfe; }
+  }
+
+  .btn-close { opacity: 0.4; &:hover { opacity: 0.8; } &:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--shadcn-ring) 50%, transparent); } }
+
+  // ── Progress ─────────────────────────────────
+  // 공식: bg-primary/20 (h-2 = 0.5rem, rounded-full)
+  .progress {
+    background-color: rgba($shadcn-primary, 0.2);
+    border-radius: 9999px;
+    height: 0.5rem;
+
+    .progress-bar {
+      border-radius: 9999px;
+      &.bg-primary   { background-color: var(--shadcn-primary) !important; }
+      &.bg-secondary { background-color: var(--shadcn-muted-fg) !important; }
+      &.bg-danger    { background-color: $shadcn-destructive !important; }
+    }
+  }
+
+  // ── Spinners ─────────────────────────────────
+  .spinner-border, .spinner-grow {
+    &.text-primary   { color: var(--shadcn-primary) !important; }
+    &.text-secondary { color: var(--shadcn-muted-fg) !important; }
+    &.text-danger    { color: $shadcn-destructive !important; }
+  }
+
+  // ── Placeholder ──────────────────────────────
+  .placeholder {
+    background-color: var(--shadcn-secondary);
+    border-radius: $shadcn-radius-sm;
+    opacity: 1;
+  }
+
+  // ── Tooltip ──────────────────────────────────
+  .tooltip .tooltip-inner {
+    background-color: var(--shadcn-primary);
+    color: var(--shadcn-primary-fg);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    padding: 0.3rem 0.625rem;
+    border-radius: $shadcn-radius-sm;
+  }
+  .tooltip.bs-tooltip-top    .tooltip-arrow::before { border-top-color:    var(--shadcn-primary); }
+  .tooltip.bs-tooltip-end    .tooltip-arrow::before { border-right-color:  var(--shadcn-primary); }
+  .tooltip.bs-tooltip-bottom .tooltip-arrow::before { border-bottom-color: var(--shadcn-primary); }
+  .tooltip.bs-tooltip-start  .tooltip-arrow::before { border-left-color:   var(--shadcn-primary); }
+
+  // ── Popover ──────────────────────────────────
+  .popover {
+    background-color: var(--shadcn-card);
+    border-color: var(--shadcn-border);
+    border-radius: $shadcn-radius-lg;
+    box-shadow: $shadcn-shadow-md;
+    font-size: 0.875rem;
+    &-header { background-color: var(--shadcn-card); color: var(--shadcn-fg); font-weight: 600; font-size: 0.875rem; border-bottom-color: var(--shadcn-border); border-radius: $shadcn-radius-lg $shadcn-radius-lg 0 0; }
+    &-body   { color: var(--shadcn-muted-fg); }
+  }
+  .popover-arrow::before { border-color: var(--shadcn-border) !important; }
+  .popover-arrow::after  { border-color: var(--shadcn-card) !important; }
+
+  // ── Modal ────────────────────────────────────
+  .modal-content {
+    background-color: var(--shadcn-card);
+    border-color: var(--shadcn-border);
+    border-radius: $shadcn-radius-xl;
+    box-shadow: $shadcn-shadow-lg;
+    color: var(--shadcn-fg);
+  }
+  .modal-header {
+    border-bottom-color: var(--shadcn-border);
+    .modal-title { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.01em; }
+  }
+  .modal-body   { font-size: 0.875rem; color: var(--shadcn-muted-fg); }
+  .modal-footer { border-top-color: var(--shadcn-border); gap: 0.5rem; }
+
+  // ── Offcanvas ───────────────────────────────
+  .offcanvas {
+    background-color: var(--shadcn-card);
+    border-color: var(--shadcn-border);
+    box-shadow: $shadcn-shadow-lg;
+    color: var(--shadcn-fg);
+    &-header { border-bottom: 1px solid var(--shadcn-border); .offcanvas-title { font-size: 0.9375rem; font-weight: 600; } }
+    &-body   { font-size: 0.875rem; }
+  }
+
+  // ── Toast ────────────────────────────────────
+  .toast {
+    background-color: var(--shadcn-card);
+    border-color: var(--shadcn-border);
+    border-radius: $shadcn-radius-lg;
+    box-shadow: $shadcn-shadow-lg;
+    font-size: 0.875rem;
+    color: var(--shadcn-fg);
+  }
+  .toast-header {
+    background-color: var(--shadcn-card);
+    border-bottom-color: var(--shadcn-border);
+    color: var(--shadcn-fg);
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: $shadcn-radius-lg $shadcn-radius-lg 0 0;
+  }
+  .toast-body { color: var(--shadcn-muted-fg); }
+
+  // ── Code / Pre / kbd ────────────────────────
+  code:not(pre code) {
+    background-color: var(--shadcn-secondary);
+    color: var(--shadcn-fg);
+    border-radius: $shadcn-radius-sm;
+    padding: 0.15em 0.4em;
+    font-size: 0.8125rem;
+  }
+
+  pre {
+    background-color: var(--shadcn-secondary);
+    border: 1px solid var(--shadcn-border);
+    border-radius: $shadcn-radius-md;
+    padding: 0.875rem 1rem;
+    font-size: 0.8125rem;
+    code { background: none; padding: 0; color: var(--shadcn-fg); }
+  }
+
+  kbd {
+    background-color: var(--shadcn-secondary);
+    border: 1px solid var(--shadcn-border);
+    border-bottom-width: 2px;
+    border-radius: $shadcn-radius-sm;
+    color: var(--shadcn-fg);
+    font-family: inherit;
+    font-size: 0.75rem;
+    padding: 0.1em 0.4em;
+  }
+
+  mark {
+    background-color: #fef9c3;
+    color: #713f12;
+    border-radius: $shadcn-radius-sm;
+    padding: 0.05em 0.2em;
+  }
+
+  // ── Divider ─────────────────────────────────
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--shadcn-muted-fg);
+    font-size: 0.75rem;
+    &::before, &::after { content: ''; flex: 1; height: 1px; background: var(--shadcn-border); }
+  }
+
+  // ── Chip ─────────────────────────────────────
+  .chip {
+    border-radius: $shadcn-radius-sm;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2em 0.6em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    &-default  { background: var(--shadcn-secondary); color: var(--shadcn-secondary-fg); }
+    &-primary  { background: var(--shadcn-primary);   color: var(--shadcn-primary-fg); }
+    &-success  { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+    &-warning  { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+    &-danger   { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+    &-bordered { background: transparent; border: 1px solid var(--shadcn-border); color: var(--shadcn-fg); }
+
+    .chip-close {
+      background: none; border: none; padding: 0; line-height: 1;
+      color: inherit; opacity: 0.6; cursor: pointer; font-size: 0.875rem;
+      &:hover { opacity: 1; }
+    }
+  }
+
+  // ── Avatar ───────────────────────────────────
+  .avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-radius: $shadcn-radius-md;
+    flex-shrink: 0;
+    user-select: none;
+
+    &-xs { width: 1.5rem;  height: 1.5rem;  font-size: .625rem; }
+    &-sm { width: 2rem;    height: 2rem;    font-size: .75rem;  }
+    &-md { width: 2.5rem;  height: 2.5rem;  font-size: .875rem; }
+    &-lg { width: 3rem;    height: 3rem;    font-size: 1rem;    }
+    &-xl { width: 3.5rem;  height: 3.5rem;  font-size: 1.125rem;}
+
+    &-default { background: var(--shadcn-secondary); color: var(--shadcn-secondary-fg); }
+    &-muted   { background: var(--shadcn-muted);     color: var(--shadcn-muted-fg);     }
+    &-primary { background: var(--shadcn-primary);   color: var(--shadcn-primary-fg);   }
+  }
+
+  .avatar-status {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: .625rem; height: .625rem;
+    border-radius: 50%;
+    border: 2px solid var(--shadcn-bg);
+    &-online  { background: #22c55e; }
+    &-busy    { background: var(--shadcn-destructive); }
+    &-away    { background: #f59e0b; }
+    &-offline { background: var(--shadcn-muted-fg); }
+  }
+
+  .avatar-group {
+    display: flex;
+    .avatar { margin-left: -.625rem; border: 2px solid var(--shadcn-bg); &:first-child { margin-left: 0; } }
+  }
+
+  // ── Dark mode ────────────────────────────────
+  [data-theme="dark"] {
+    --shadcn-bg:           #09090b;
+    --shadcn-fg:           #fafafa;
+    --shadcn-card:         #09090b;
+    --shadcn-card-fg:      #fafafa;
+    --shadcn-primary:      #fafafa;
+    --shadcn-primary-fg:   #09090b;
+    --shadcn-secondary:    #27272a;
+    --shadcn-secondary-fg: #fafafa;
+    --shadcn-muted:        #27272a;
+    --shadcn-muted-fg:     #a1a1aa;
+    --shadcn-accent:       #27272a;
+    --shadcn-accent-fg:    #fafafa;
+    --shadcn-border:       #27272a;
+    --shadcn-ring:         #d4d4d8;
+
+    background-color: var(--shadcn-bg);
+    color: var(--shadcn-fg);
+
+    .form-control, .form-select {
+      background-color: transparent;
+      &:disabled { background-color: rgba(255,255,255,0.05); }
+    }
+
+    .alert-primary { background-color: #18181b; color: var(--shadcn-fg); border-color: var(--shadcn-border); }
+    .alert-success  { background-color: #052e16; color: #86efac; border-color: #166534; }
+    .alert-warning  { background-color: #1c1400; color: #fcd34d; border-color: #78350f; }
+    .alert-danger   { background-color: #1a0000; color: #fca5a5; border-color: #7f1d1d; }
+    .alert-info     { background-color: #0c1a2e; color: #93c5fd; border-color: #1e3a5f; }
+
+    .chip-default  { background: var(--shadcn-secondary); color: var(--shadcn-secondary-fg); }
+    .chip-primary  { background: var(--shadcn-primary);   color: var(--shadcn-primary-fg); }
+    .chip-success  { background: #052e16; color: #86efac; border-color: #166534; }
+    .chip-warning  { background: #1c1400; color: #fcd34d; border-color: #78350f; }
+    .chip-danger   { background: #1a0000; color: #fca5a5; border-color: #7f1d1d; }
+
+    mark { background-color: #422006; color: #fef08a; }
+
+    // primary가 #fafafa로 바뀌므로 progress 배경도 조정
+    .progress { background-color: rgba(250,250,250,0.2); }
+
+    // navbar 텍스트/border도 다크모드 변수로 교체
+    .navbar-hero {
+      background: rgba(9,9,11,0.95);
+      border-bottom-color: var(--shadcn-border);
+      .navbar-brand { color: var(--shadcn-fg); }
+      .nav-link { color: var(--shadcn-muted-fg);
+        &:hover, &.active { color: var(--shadcn-fg); background: var(--shadcn-accent); }
+      }
+    }
+
+    // 버튼 hover — 다크모드 고정색 override (SCSS lighten/darken은 컴파일 시 고정되므로 필요)
+    .btn {
+      &-primary {
+        &:hover { background: darken(#fafafa, 10%); border-color: darken(#fafafa, 10%); color: #09090b; }
+      }
+      &-secondary {
+        &:hover { background: lighten(#27272a, 6%); color: var(--shadcn-secondary-fg); }
+      }
+    }
+
+    pre { background-color: #0a0a0f; border-color: var(--shadcn-border); }
+  }
+}

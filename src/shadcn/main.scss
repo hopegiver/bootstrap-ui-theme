@@ -1,0 +1,57 @@
+// ============================================
+// Bootstrap Hero - shadcn/ui Theme Entry
+// ============================================
+
+@import 'variables';
+
+// Bootstrap 변수를 shadcn 값으로 덮어쓰기
+$font-family-sans-serif: $shadcn-font-family;
+$font-size-base:         $shadcn-font-size-base;
+$line-height-base:       $shadcn-line-height;
+
+$primary:   $shadcn-primary;
+$secondary: $shadcn-secondary;
+$danger:    $shadcn-destructive;
+$light:     $shadcn-muted;
+$dark:      $shadcn-fg;
+
+$border-color:  $shadcn-border;
+$border-width:  1px;
+$border-radius: $shadcn-radius;
+$border-radius-sm: $shadcn-radius-sm;
+$border-radius-lg: $shadcn-radius-lg;
+$border-radius-xl: $shadcn-radius-xl;
+$border-radius-pill: $shadcn-radius-xl;
+
+$body-bg:    $shadcn-bg;
+$body-color: $shadcn-fg;
+$body-secondary-color: $shadcn-muted-fg;
+
+$btn-border-radius:    $shadcn-radius-md;
+$btn-border-radius-sm: $shadcn-radius-sm;
+$btn-border-radius-lg: $shadcn-radius-lg;
+$btn-font-weight: 500;
+$btn-box-shadow:        none; // 각 variant에서 개별 적용
+$btn-focus-box-shadow:  none;
+$btn-active-box-shadow: none;
+
+$input-border-radius:    $shadcn-radius-md;   // rounded-md
+$input-border-radius-sm: $shadcn-radius-sm;
+$input-border-radius-lg: $shadcn-radius-lg;
+$input-border-color:     $shadcn-border;
+$input-focus-border-color: $shadcn-ring;
+$input-bg:               transparent;         // 공식: bg-transparent
+$input-focus-bg:         transparent;
+$input-box-shadow:       $shadcn-shadow-xs;   // 공식: shadow-xs
+$input-focus-box-shadow: 0 0 0 3px rgba($shadcn-ring, 0.5); // focus-visible:ring-[3px] ring-ring/50
+
+$card-border-radius: $shadcn-radius-xl;       // 공식: rounded-xl
+$card-border-color:  $shadcn-border;
+$card-border-width:  1px;
+$card-box-shadow:    $shadcn-shadow-sm;        // 공식: shadow-sm
+
+$badge-border-radius: 9999px;                 // 공식: rounded-full
+$badge-font-weight:   500;                    // 공식: font-medium
+
+@import 'bootstrap/scss/bootstrap';
+@import 'components';

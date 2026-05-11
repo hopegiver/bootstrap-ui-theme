@@ -1,0 +1,596 @@
+// ============================================
+// HeroUI v3-inspired Custom Component Styles
+// ============================================
+
+@use 'sass:color';
+
+// ── Buttons ─────────────────────────────────
+.btn {
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+
+  &:active     { transform: scale(0.97); }
+  &.btn-sm:active { transform: scale(0.98); }
+  &.btn-lg:active { transform: scale(0.96); }
+
+  // btn-link → ghost/flat style
+  &-link {
+    text-decoration: none;
+    border-radius: $btn-border-radius;
+    padding: $btn-padding-y $btn-padding-x;
+    &:hover { background: $primary-subtle; text-decoration: none; }
+  }
+}
+
+// ── Chip / Tag ──────────────────────────────
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: $border-radius-pill;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+
+  &-default   { background: $default-subtle;   color: $body-color; }
+  &-primary   { background: $primary-subtle;   color: $primary; }
+  &-secondary { background: $secondary-subtle; color: $secondary; }
+  &-success   { background: $success-subtle;   color: color.adjust($success, $lightness: -10%); }
+  &-warning   { background: $warning-subtle;   color: color.adjust($warning, $lightness: -15%); }
+  &-danger    { background: $danger-subtle;    color: $danger; }
+  &-info      { background: $info-subtle;      color: color.adjust($info, $lightness: -10%); }
+
+  &-dot {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  &-close {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.15s;
+    line-height: 1;
+    padding: 0;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    &:hover { opacity: 1; }
+  }
+
+  // Bordered variant
+  &-bordered {
+    background: transparent;
+    border: 1.5px solid currentColor;
+    &.chip-primary   { color: $primary; }
+    &.chip-secondary { color: $secondary; }
+    &.chip-success   { color: color.adjust($success, $lightness: -10%); }
+    &.chip-danger    { color: $danger; }
+    &.chip-warning   { color: color.adjust($warning, $lightness: -15%); }
+    &.chip-info      { color: color.adjust($info, $lightness: -10%); }
+  }
+}
+
+// ── Cards ───────────────────────────────────
+.card {
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &-hover:hover {
+    box-shadow: $box-shadow-lg;
+    transform: translateY(-2px);
+  }
+
+  // Glass card
+  &-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  &-header {
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  &-footer {
+    padding-top: 1rem;
+  }
+}
+
+// ── Avatar ──────────────────────────────────
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius-pill;
+  overflow: hidden;
+  font-weight: 600;
+  flex-shrink: 0;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // Sizes
+  &-xs  { width: 1.5rem;  height: 1.5rem;  font-size: 0.625rem; }
+  &-sm  { width: 2rem;    height: 2rem;    font-size: 0.75rem; }
+  &-md  { width: 2.5rem;  height: 2.5rem;  font-size: 0.875rem; }
+  &-lg  { width: 3rem;    height: 3rem;    font-size: 1rem; }
+  &-xl  { width: 3.75rem; height: 3.75rem; font-size: 1.25rem; }
+
+  // Colors
+  &-primary   { background: $primary-subtle;   color: $primary; }
+  &-secondary { background: $secondary-subtle; color: $secondary; }
+  &-success   { background: $success-subtle;   color: color.adjust($success, $lightness: -10%); }
+  &-danger    { background: $danger-subtle;    color: $danger; }
+  &-warning   { background: $warning-subtle;   color: color.adjust($warning, $lightness: -15%); }
+  &-info      { background: $info-subtle;      color: color.adjust($info, $lightness: -10%); }
+  &-default   { background: $default-subtle;   color: $body-color; }
+
+  // Status indicator
+  &-status {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+    border: 2px solid #fff;
+
+    &-online  { background: $success; }
+    &-offline { background: $body-secondary-color; }
+    &-busy    { background: $danger; }
+    &-away    { background: $warning; }
+  }
+
+  // Group
+  &-group {
+    display: flex;
+    .avatar + .avatar {
+      margin-left: -0.5rem;
+      box-shadow: 0 0 0 2px #fff;
+    }
+  }
+
+  // Bordered
+  &-bordered {
+    box-shadow: 0 0 0 2px $primary;
+  }
+
+  // Rounded square
+  &-square { border-radius: $border-radius-lg; }
+}
+
+// ── Input / Form ────────────────────────────
+.form-control,
+.form-select {
+  transition: $input-transition;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.15);
+  }
+
+  &.is-valid:focus   { box-shadow: 0 0 0 3px rgba($success, 0.15); }
+  &.is-invalid:focus { box-shadow: 0 0 0 3px rgba($danger, 0.15); }
+}
+
+// Range input
+.form-range {
+  &::-webkit-slider-thumb {
+    background: $primary;
+  }
+  &::-moz-range-thumb {
+    background: $primary;
+  }
+  &:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 3px rgba($primary, 0.2);
+  }
+}
+
+// Floating label refinement
+.form-floating {
+  > .form-control:focus ~ label,
+  > .form-control:not(:placeholder-shown) ~ label {
+    color: $primary;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}
+
+// Input with icon
+.input-group-hero {
+  position: relative;
+
+  .form-control {
+    padding-left: 2.75rem;
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 0.875rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $input-placeholder-color;
+    pointer-events: none;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+  }
+}
+
+// ── Navbar ──────────────────────────────────
+.navbar-hero {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1.5px solid rgba($border-color, 0.7);
+  box-shadow: 0 1px 20px rgba(0,0,0,.04);
+
+  .navbar-brand {
+    font-weight: 700;
+    color: $body-color;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-link {
+    color: $body-secondary-color;
+    font-weight: 500;
+    border-radius: $border-radius;
+    padding: 0.4rem 0.75rem;
+    transition: all 0.15s;
+
+    &:hover, &.active {
+      color: $body-color;
+      background: $light;
+    }
+  }
+}
+
+// ── Spinner ─────────────────────────────────
+.spinner-hero {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2.5px solid rgba($primary, 0.2);
+  border-top-color: $primary;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+
+  &-sm { width: 1rem;    height: 1rem;    border-width: 2px; }
+  &-lg { width: 2.25rem; height: 2.25rem; border-width: 3px; }
+
+  &-secondary { border-color: rgba($secondary, 0.2); border-top-color: $secondary; }
+  &-success   { border-color: rgba($success,   0.2); border-top-color: $success;   }
+  &-danger    { border-color: rgba($danger,    0.2); border-top-color: $danger;    }
+  &-warning   { border-color: rgba($warning,   0.2); border-top-color: $warning;   }
+  &-white     { border-color: rgba(#fff, 0.3);       border-top-color: #fff;       }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+// ── Divider ─────────────────────────────────
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: $body-secondary-color;
+  font-size: 0.875rem;
+
+  &::before, &::after {
+    content: '';
+    flex: 1;
+    height: 1.5px;
+    background: $border-color;
+  }
+}
+
+// ── Skeleton loader ─────────────────────────
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: $border-radius;
+  display: block;
+
+  &-text  { height: 1em; margin-bottom: 0.5rem; }
+  &-title { height: 1.5em; width: 60%; margin-bottom: 0.75rem; }
+  &-avatar {
+    border-radius: $border-radius-pill;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  &-image {
+    width: 100%;
+    height: 200px;
+    border-radius: $border-radius-xl;
+  }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+// ── Kbd ─────────────────────────────────────
+kbd {
+  background: $light;
+  color: $body-color;
+  border: 1.5px solid $border-color;
+  border-radius: $border-radius-sm;
+  box-shadow: 0 2px 0 $border-color;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.125rem 0.5rem;
+}
+
+// ── Code block ──────────────────────────────
+pre {
+  background: #0d1117;
+  color: #e2e8f0;
+  border-radius: $border-radius-lg;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.875rem;
+  overflow-x: auto;
+
+  code {
+    background: none;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+  }
+}
+
+code:not(pre code) {
+  background: $primary-subtle;
+  color: $primary;
+  border-radius: $border-radius-sm;
+  padding: 0.15em 0.45em;
+  font-size: 0.875em;
+}
+
+// ── Tooltip dark ────────────────────────────
+.tooltip .tooltip-inner {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+}
+
+// ── Alert variants (HeroUI style) ───────────
+.alert-heroui {
+  border-left: 4px solid;
+  border-radius: $border-radius-lg;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+
+  &-primary { background: $primary-subtle;   color: $primary;            border-color: $primary; }
+  &-success { background: $success-subtle;   color: color.adjust($success, $lightness: -10%); border-color: $success; }
+  &-warning { background: $warning-subtle;   color: color.adjust($warning, $lightness: -15%); border-color: $warning; }
+  &-danger  { background: $danger-subtle;    color: $danger;             border-color: $danger; }
+  &-info    { background: $info-subtle;      color: color.adjust($info, $lightness: -10%);  border-color: $info; }
+
+  .alert-icon {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+}
+
+// ── Pagination custom ────────────────────────
+.pagination .page-link {
+  font-weight: 500;
+  border-radius: $border-radius-pill !important;
+  margin: 0 2px;
+  min-width: 2.25rem;
+  text-align: center;
+  transition: all 0.15s;
+
+  &:hover { background: $primary-subtle; color: $primary; }
+}
+.pagination .page-item.active .page-link {
+  background: $primary;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba($primary, 0.3);
+}
+
+// ── List group custom ────────────────────────
+.list-group-item {
+  transition: background 0.15s;
+
+  &.active {
+    background: $primary;
+    border-color: $primary;
+  }
+
+  &:not(.active):hover {
+    background: $primary-subtle;
+    color: $primary;
+  }
+}
+
+// ── Table custom ────────────────────────────
+.table {
+  --bs-table-border-color: #D1D5DB;
+
+  // 마지막 행 하단 border 제거 — 카드 border와 이중선 방지
+  > tbody > tr:last-child > * {
+    border-bottom-width: 0;
+  }
+
+  th {
+    font-weight: 600;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $body-secondary-color;
+  }
+
+  &-bordered {
+    --bs-table-border-color: #D1D5DB;
+    border: none;
+
+    > :not(caption) > * > * {
+      border-color: #D1D5DB;
+    }
+  }
+
+  // 세로 구분선만 있는 테이블 (카드 p-0 안에서 사용)
+  &-col-divided {
+    --bs-table-border-color: #D1D5DB;
+
+    > :not(caption) > * > * {
+      border-top-color: #D1D5DB;
+      border-left: none;
+      border-right: none;
+    }
+
+    // 첫 번째 열 이후 세로선
+    > :not(caption) > * > * + * {
+      border-left: 1.5px solid #D1D5DB;
+    }
+  }
+}
+
+// 카드 p-0 안 테이블 — 모서리 셀에 카드 radius 적용
+.card > .card-body.p-0,
+.card > .card-body > .table-responsive {
+  border-radius: inherit;
+}
+
+.card .table:first-child thead:first-child tr:first-child th:first-child,
+.card .table-responsive:first-child .table thead:first-child tr:first-child th:first-child {
+  border-top-left-radius: calc($card-border-radius - 1.5px);
+}
+.card .table:first-child thead:first-child tr:first-child th:last-child,
+.card .table-responsive:first-child .table thead:first-child tr:first-child th:last-child {
+  border-top-right-radius: calc($card-border-radius - 1.5px);
+}
+.card .table tbody:last-child tr:last-child td:first-child,
+.card .table-responsive .table tbody:last-child tr:last-child td:first-child {
+  border-bottom-left-radius: calc($card-border-radius - 1.5px);
+}
+.card .table tbody:last-child tr:last-child td:last-child,
+.card .table-responsive .table tbody:last-child tr:last-child td:last-child {
+  border-bottom-right-radius: calc($card-border-radius - 1.5px);
+}
+
+// ── Offcanvas ───────────────────────────────
+.offcanvas {
+  border: none;
+  box-shadow: $box-shadow-lg;
+}
+
+// ── Toast ───────────────────────────────────
+.toast {
+  .toast-header {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+}
+
+// ── Dark mode ───────────────────────────────
+[data-theme="dark"] {
+  --bs-body-bg: #0d0d0f;
+  --bs-body-color: #ecedee;
+  --bs-border-color: #27272a;
+  --bs-secondary-color: #71717a;
+
+  .card {
+    background: #18181b;
+    border-color: #27272a;
+  }
+
+  .card-glass {
+    background: rgba(24, 24, 27, 0.75);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .navbar-hero {
+    background: rgba(13, 13, 15, 0.85);
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .form-control,
+  .form-select {
+    background-color: #18181b;
+    border-color: #27272a;
+    color: #ecedee;
+
+    &::placeholder { color: #52525b; }
+    &:focus { border-color: $primary; }
+  }
+
+  .chip-default  { background: #27272a; color: #a1a1aa; }
+  .skeleton      {
+    background: linear-gradient(90deg, #27272a 25%, #3f3f46 50%, #27272a 75%);
+    background-size: 200% 100%;
+  }
+  .btn-light     { background: #27272a; color: #ecedee; border-color: #27272a; }
+  kbd            { background: #27272a; color: #ecedee; border-color: #3f3f46; box-shadow: 0 2px 0 #3f3f46; }
+  .dropdown-menu { background: #18181b; border-color: #27272a; }
+  .dropdown-item { color: #ecedee; &:hover { background: #27272a; } }
+  .list-group-item {
+    background: #18181b;
+    border-color: #27272a;
+    color: #ecedee;
+    &:not(.active):hover { background: rgba($primary, 0.12); color: lighten($primary, 20%); }
+  }
+  .table {
+    --bs-table-striped-bg: rgba(255,255,255,.03);
+    --bs-table-hover-bg: rgba($primary, .06);
+    color: #ecedee;
+    border-color: #27272a;
+  }
+  .offcanvas { background: #18181b; }
+  .toast     { background: #18181b; border-color: #27272a; color: #ecedee; }
+  .toast-header { background: #18181b; border-color: #27272a; color: #ecedee; }
+  .modal-content { background: #18181b; }
+  pre { background: #0a0a0f; }
+}
+
+// ── Utilities ───────────────────────────────
+.text-gradient-primary {
+  background: linear-gradient(135deg, $primary, $info);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-secondary {
+  background: linear-gradient(135deg, $secondary, #06B7DB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-rainbow {
+  background: linear-gradient(135deg, $primary, $secondary, $danger);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, $primary, color.adjust($primary, $lightness: -12%)) !important;
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, $secondary, color.adjust($secondary, $lightness: -12%)) !important;
+}
+

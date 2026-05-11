@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap Hero — NuxtUI v4 Theme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" />
+  <script type="module" crossorigin src="./nuxtui.js"></script>
+  <link rel="stylesheet" crossorigin href="./nuxtui.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top px-3 px-lg-5">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center gap-1" href="../index.html">
+      <span style="color:var(--ui-primary);font-size:1.25rem;font-weight:800;line-height:1;">N</span><span style="font-weight:700;">uxtUI</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav me-auto gap-1 ms-3">
+        <li class="nav-item"><a class="nav-link active" href="#">홈</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">컴포넌트</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">문서</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge text-bg-success">NuxtUI v4</span>
+        <button id="theme-toggle" class="btn btn-link" title="테마 전환">🌙</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="container-xl py-5 px-3 px-lg-4">
+
+  <!-- Hero -->
+  <section class="text-center py-5 mb-5">
+    <span class="badge text-bg-success mb-4 fs-6">NuxtUI v4</span>
+    <h1 class="display-4 fw-bold mb-3" style="letter-spacing:-.03em;">
+      <span style="color:var(--ui-primary);">NuxtUI</span> v4 Theme
+    </h1>
+    <p class="text-secondary mb-5 mx-auto" style="max-width:480px;">
+      에메랄드 그린 primary, slate neutral, DM Sans 폰트가 특징인 NuxtUI v4 스타일입니다.
+    </p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <button class="btn btn-primary btn-lg px-5">시작하기</button>
+      <button class="btn btn-link btn-lg px-5">문서 보기</button>
+    </div>
+  </section>
+
+  <hr class="my-5">
+
+  <!-- Buttons -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Buttons</h2>
+    <div class="card mb-4"><div class="card-body">
+      <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Variants</p>
+      <div class="d-flex flex-wrap gap-2">
+        <button class="btn btn-primary">Solid</button>
+        <button class="btn btn-outline-primary">Outline</button>
+        <button class="btn btn-secondary">Neutral</button>
+        <button class="btn btn-link">Ghost</button>
+        <button class="btn btn-danger">Error</button>
+      </div>
+    </div></div>
+    <div class="card"><div class="card-body">
+      <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Sizes &amp; States</p>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Medium</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+        <button class="btn btn-secondary" disabled>Disabled</button>
+        <button class="btn btn-primary">
+          <span class="spinner-border spinner-border-sm me-1" role="status"></span>Loading
+        </button>
+        <button class="btn btn-secondary" style="padding:.375rem;width:2rem;height:2rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/></svg>
+        </button>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- Cards -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Cards</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header">
+            <p class="text-secondary mb-0" style="font-size:.8125rem;">Dashboard</p>
+            <h5 class="card-title mb-0 mt-1">Total Revenue</h5>
+          </div>
+          <div class="card-body">
+            <span style="font-size:2rem;font-weight:700;letter-spacing:-.03em;">$45,231</span>
+            <p class="text-secondary mt-1 mb-0" style="font-size:.8125rem;">
+              <span style="color:var(--ui-success);">↑ 20.1%</span> from last month
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header">
+            <p class="text-secondary mb-0" style="font-size:.8125rem;">Team</p>
+            <h5 class="card-title mb-0 mt-1">Recent Activity</h5>
+          </div>
+          <div class="card-body d-flex flex-column gap-3">
+            <div class="d-flex align-items-center gap-3">
+              <span class="avatar avatar-sm bg-primary-subtle text-primary">SD</span>
+              <div class="flex-fill">
+                <div style="font-size:.875rem;font-weight:500;">Sofia Davis</div>
+                <div class="text-secondary" style="font-size:.75rem;">Created new project</div>
+              </div>
+              <span class="badge bg-success-subtle text-success">New</span>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <span class="avatar avatar-sm bg-secondary-subtle text-secondary">JL</span>
+              <div class="flex-fill">
+                <div style="font-size:.875rem;font-weight:500;">Jackson Lee</div>
+                <div class="text-secondary" style="font-size:.75rem;">Merged pull request</div>
+              </div>
+              <span class="badge text-bg-success">Done</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header">
+            <p class="text-secondary mb-0" style="font-size:.8125rem;">Settings</p>
+            <h5 class="card-title mb-0 mt-1">Notifications</h5>
+          </div>
+          <div class="card-body d-flex flex-column gap-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div style="font-size:.875rem;font-weight:500;">Email alerts</div>
+                <div class="text-secondary" style="font-size:.75rem;">Get notified by email</div>
+              </div>
+              <span class="badge bg-success-subtle text-success">On</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div style="font-size:.875rem;font-weight:500;">Push notifications</div>
+                <div class="text-secondary" style="font-size:.75rem;">Browser notifications</div>
+              </div>
+              <span class="badge text-bg-secondary">Off</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary btn-sm">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alerts -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Alerts</h2>
+    <div class="d-flex flex-column gap-3">
+      <div class="alert alert-primary d-flex gap-3 align-items-start" role="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="flex-shrink:0;margin-top:.1rem;"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/></svg>
+        <div><strong>Information</strong> — New updates are available for your project.</div>
+      </div>
+      <div class="alert alert-success d-flex gap-3 align-items-start" role="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="flex-shrink:0;margin-top:.1rem;"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+        <div><strong>Success</strong> — Your changes have been saved successfully.</div>
+      </div>
+      <div class="alert alert-warning d-flex gap-3 align-items-start" role="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="flex-shrink:0;margin-top:.1rem;"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg>
+        <div><strong>Warning</strong> — Your session will expire in 10 minutes.</div>
+      </div>
+      <div class="alert alert-danger d-flex gap-3 align-items-start" role="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="flex-shrink:0;margin-top:.1rem;"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/></svg>
+        <div><strong>Error</strong> — Failed to process your request. Please try again.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Badges -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Badges</h2>
+    <div class="card"><div class="card-body">
+      <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Solid</p>
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <span class="badge text-bg-primary">Primary</span>
+        <span class="badge text-bg-secondary">Neutral</span>
+        <span class="badge text-bg-success">Success</span>
+        <span class="badge text-bg-warning">Warning</span>
+        <span class="badge text-bg-danger">Error</span>
+        <span class="badge text-bg-info">Info</span>
+      </div>
+      <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Soft</p>
+      <div class="d-flex flex-wrap gap-2">
+        <span class="badge bg-primary-subtle text-primary">Primary</span>
+        <span class="badge bg-secondary-subtle text-secondary">Neutral</span>
+        <span class="badge bg-success-subtle text-success">Success</span>
+        <span class="badge bg-warning-subtle text-warning">Warning</span>
+        <span class="badge bg-danger-subtle text-danger">Error</span>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- Avatars -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Avatars</h2>
+    <div class="card"><div class="card-body">
+      <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Sizes &amp; Colors</p>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-4">
+        <span class="avatar avatar-xs bg-primary-subtle text-primary">A</span>
+        <span class="avatar avatar-sm bg-success-subtle text-success">B</span>
+        <span class="avatar bg-primary-subtle text-primary">C</span>
+        <span class="avatar avatar-lg bg-warning-subtle text-warning">D</span>
+        <span class="avatar avatar-xl bg-info-subtle text-info">E</span>
+      </div>
+      <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Status &amp; Group</p>
+      <div class="d-flex gap-3 align-items-center flex-wrap">
+        <div class="position-relative d-inline-block">
+          <span class="avatar avatar-lg bg-primary-subtle text-primary">홍</span>
+          <span class="avatar-status avatar-status-online"></span>
+        </div>
+        <div class="position-relative d-inline-block">
+          <span class="avatar avatar-lg bg-success-subtle text-success">김</span>
+          <span class="avatar-status avatar-status-busy"></span>
+        </div>
+        <div class="position-relative d-inline-block">
+          <span class="avatar avatar-lg bg-secondary-subtle text-secondary">이</span>
+          <span class="avatar-status avatar-status-away"></span>
+        </div>
+        <div class="avatar-group ms-3">
+          <span class="avatar bg-primary-subtle text-primary">A</span>
+          <span class="avatar bg-success-subtle text-success">B</span>
+          <span class="avatar bg-warning-subtle text-warning">C</span>
+          <span class="avatar bg-secondary-subtle text-secondary">+2</span>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- Inputs & Forms -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Inputs &amp; Forms</h2>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card h-100"><div class="card-body">
+          <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Basic Inputs</p>
+          <div class="d-flex flex-column gap-3">
+            <div><label class="form-label">Name</label><input class="form-control" placeholder="John Doe"></div>
+            <div><label class="form-label">Email</label><input class="form-control" type="email" placeholder="john@example.com"></div>
+            <div>
+              <label class="form-label">Role</label>
+              <select class="form-select"><option>Select role</option><option>Admin</option><option>Member</option></select>
+            </div>
+            <div><label class="form-label">Message</label><textarea class="form-control" rows="2" placeholder="Enter your message..."></textarea></div>
+          </div>
+        </div></div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card h-100"><div class="card-body">
+          <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">States &amp; Checks</p>
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="input-group">
+              <span class="input-group-text">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.099zm-5.242 1.156a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11"/></svg>
+              </span>
+              <input type="search" class="form-control" placeholder="검색...">
+            </div>
+            <input type="text" class="form-control is-valid" value="올바른 값" readonly>
+            <input type="text" class="form-control is-invalid" value="잘못된 값" readonly>
+            <div class="invalid-feedback d-block">유효하지 않은 값입니다.</div>
+          </div>
+          <div class="d-flex flex-column gap-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="chk1" checked>
+              <label class="form-check-label" for="chk1">이메일 수신 동의</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="chk2">
+              <label class="form-check-label" for="chk2">마케팅 수신 동의</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="r1" id="r1" checked>
+              <label class="form-check-label" for="r1">옵션 A</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="r1" id="r2">
+              <label class="form-check-label" for="r2">옵션 B</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="sw1" checked>
+              <label class="form-check-label" for="sw1">알림 활성화</label>
+            </div>
+          </div>
+          <p class="text-secondary fw-medium mt-4 mb-2" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Range</p>
+          <input type="range" class="form-range" value="60">
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress & Spinners -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Progress &amp; Spinners</h2>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card h-100"><div class="card-body">
+          <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Progress</p>
+          <div class="d-flex flex-column gap-3">
+            <div>
+              <div class="d-flex justify-content-between mb-1 text-secondary" style="font-size:.75rem;"><span>Primary</span><span>75%</span></div>
+              <div class="progress"><div class="progress-bar bg-primary" style="width:75%"></div></div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between mb-1 text-secondary" style="font-size:.75rem;"><span>Success</span><span>60%</span></div>
+              <div class="progress"><div class="progress-bar bg-success" style="width:60%"></div></div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between mb-1 text-secondary" style="font-size:.75rem;"><span>Warning</span><span>45%</span></div>
+              <div class="progress"><div class="progress-bar bg-warning" style="width:45%"></div></div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between mb-1 text-secondary" style="font-size:.75rem;"><span>Error</span><span>30%</span></div>
+              <div class="progress"><div class="progress-bar bg-danger" style="width:30%"></div></div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card h-100"><div class="card-body">
+          <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Spinners</p>
+          <div class="d-flex align-items-center gap-4 flex-wrap mb-4">
+            <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+            <div class="spinner-border text-primary" role="status"></div>
+            <div class="spinner-border text-success" role="status"></div>
+            <div class="spinner-border text-warning" role="status"></div>
+            <div class="spinner-border text-danger" role="status"></div>
+            <div class="spinner-grow text-primary" role="status"></div>
+          </div>
+          <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Skeleton</p>
+          <p class="placeholder-glow mb-0">
+            <span class="placeholder col-7 mb-2"></span>
+            <span class="placeholder col-12 mb-1"></span>
+            <span class="placeholder col-9"></span>
+          </p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Table</h2>
+    <div class="card"><div class="card-body p-0">
+      <table class="table mb-0">
+        <thead><tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="d-flex align-items-center gap-2">
+                <span class="avatar avatar-sm bg-primary-subtle text-primary">SD</span>
+                Sofia Davis
+              </div>
+            </td>
+            <td class="text-secondary">sofia@example.com</td>
+            <td>Owner</td>
+            <td><span class="badge bg-success-subtle text-success">Active</span></td>
+            <td><button class="btn btn-link btn-sm">Edit</button></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="d-flex align-items-center gap-2">
+                <span class="avatar avatar-sm bg-secondary-subtle text-secondary">JL</span>
+                Jackson Lee
+              </div>
+            </td>
+            <td class="text-secondary">jackson@example.com</td>
+            <td>Member</td>
+            <td><span class="badge bg-success-subtle text-success">Active</span></td>
+            <td><button class="btn btn-link btn-sm">Edit</button></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="d-flex align-items-center gap-2">
+                <span class="avatar avatar-sm bg-warning-subtle text-warning">AK</span>
+                Alice Kim
+              </div>
+            </td>
+            <td class="text-secondary">alice@example.com</td>
+            <td>Member</td>
+            <td><span class="badge text-bg-danger">Inactive</span></td>
+            <td><button class="btn btn-link btn-sm">Edit</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <!-- List Group -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">List Group</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item">기본 항목</li>
+          <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            알림 설정
+            <span class="badge text-bg-primary">3</span>
+          </li>
+          <li class="list-group-item list-group-item-action active">활성 항목</li>
+          <li class="list-group-item list-group-item-action">
+            <div class="fw-medium">Sofia Davis</div>
+            <small class="text-secondary">sofia@example.com</small>
+          </li>
+          <li class="list-group-item list-group-item-action disabled">비활성 항목</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+            <span class="avatar avatar-sm bg-primary-subtle text-primary flex-shrink-0">P</span>
+            <div>
+              <div class="fw-medium" style="font-size:.875rem;">프로필 설정</div>
+              <div class="text-secondary" style="font-size:.75rem;">이름, 이메일, 사진 변경</div>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+            <span class="avatar avatar-sm bg-success-subtle text-success flex-shrink-0">S</span>
+            <div>
+              <div class="fw-medium" style="font-size:.875rem;">보안</div>
+              <div class="text-secondary" style="font-size:.75rem;">비밀번호, 2단계 인증</div>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+            <span class="avatar avatar-sm bg-warning-subtle text-warning flex-shrink-0">N</span>
+            <div>
+              <div class="fw-medium" style="font-size:.875rem;">알림</div>
+              <div class="text-secondary" style="font-size:.75rem;">이메일 및 푸시 알림 설정</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accordion -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Accordion</h2>
+    <div class="accordion" id="accordionMain">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc1">
+            NuxtUI v4란 무엇인가요?
+          </button>
+        </h2>
+        <div id="acc1" class="accordion-collapse collapse show" data-bs-parent="#accordionMain">
+          <div class="accordion-body">
+            NuxtUI v4는 Nuxt.js 생태계를 위한 완전히 재설계된 UI 컴포넌트 라이브러리입니다. Tailwind CSS v4 기반으로 빌드되어 있으며, 다크 모드와 커스터마이징이 용이합니다.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc2">
+            어떻게 시작하나요?
+          </button>
+        </h2>
+        <div id="acc2" class="accordion-collapse collapse" data-bs-parent="#accordionMain">
+          <div class="accordion-body">
+            <code>npm install @nuxt/ui</code>를 실행하고 <code>nuxt.config.ts</code>에 모듈을 추가하면 바로 사용할 수 있습니다.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc3">
+            커스터마이징이 가능한가요?
+          </button>
+        </h2>
+        <div id="acc3" class="accordion-collapse collapse" data-bs-parent="#accordionMain">
+          <div class="accordion-body">
+            네, CSS 변수(<code>--ui-*</code>)를 통해 전체 디자인 시스템을 손쉽게 커스터마이징할 수 있습니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs / Nav -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Tabs &amp; Nav</h2>
+    <div class="card mb-4"><div class="card-body">
+      <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Tabs</p>
+      <ul class="nav nav-tabs mb-3" id="tabMain">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1">Overview</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">Analytics</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3">Settings</button></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="tab1"><p class="text-secondary mb-0" style="font-size:.875rem;">프로젝트의 전반적인 현황을 확인할 수 있습니다.</p></div>
+        <div class="tab-pane fade" id="tab2"><p class="text-secondary mb-0" style="font-size:.875rem;">상세 분석 데이터를 확인합니다.</p></div>
+        <div class="tab-pane fade" id="tab3"><p class="text-secondary mb-0" style="font-size:.875rem;">계정 및 알림 설정을 관리합니다.</p></div>
+      </div>
+    </div></div>
+    <div class="card"><div class="card-body">
+      <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Pills Nav</p>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+        <li class="nav-item"><a class="nav-link disabled" href="#">Reports</a></li>
+      </ul>
+    </div></div>
+  </section>
+
+  <!-- Dropdown -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Dropdown</h2>
+    <div class="card"><div class="card-body d-flex flex-wrap gap-3">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Actions</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="me-2" viewBox="0 0 16 16"><path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/></svg>Edit</a></li>
+          <li><a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="me-2" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/></svg>Duplicate</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="me-2" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/><path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/></svg>Delete</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">Status</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><span style="width:.5rem;height:.5rem;border-radius:50%;background:var(--ui-success);display:inline-block;"></span>Active</a></li>
+          <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><span style="width:.5rem;height:.5rem;border-radius:50%;background:var(--ui-warning);display:inline-block;"></span>Pending</a></li>
+          <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><span style="width:.5rem;height:.5rem;border-radius:50%;background:var(--bs-secondary-color);display:inline-block;"></span>Inactive</a></li>
+        </ul>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-outline-primary">Split</button>
+        <button class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"></button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">옵션 1</a></li>
+          <li><a class="dropdown-item" href="#">옵션 2</a></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- Breadcrumb & Pagination -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Breadcrumb &amp; Pagination</h2>
+    <div class="card mb-4"><div class="card-body">
+      <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Breadcrumb</p>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Components</a></li>
+          <li class="breadcrumb-item active">Breadcrumb</li>
+        </ol>
+      </nav>
+    </div></div>
+    <div class="card"><div class="card-body">
+      <p class="text-secondary fw-medium mb-3" style="font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;">Pagination</p>
+      <nav>
+        <ul class="pagination mb-0">
+          <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#">5</a></li>
+          <li class="page-item"><a class="page-link" href="#">»</a></li>
+        </ul>
+      </nav>
+    </div></div>
+  </section>
+
+  <!-- Modal & Toast -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Modal &amp; Toast</h2>
+    <div class="card"><div class="card-body d-flex flex-wrap gap-3">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDemo">Modal 열기</button>
+      <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalForm">Form Modal</button>
+      <button class="btn btn-link" id="toastBtn">Toast 보기</button>
+    </div></div>
+  </section>
+
+  <!-- Tooltip & Popover -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Tooltip &amp; Popover</h2>
+    <div class="card"><div class="card-body d-flex flex-wrap gap-3">
+      <button class="btn btn-secondary" data-bs-toggle="tooltip" title="기본 툴팁입니다.">Tooltip</button>
+      <button class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="위쪽 툴팁">Top</button>
+      <button class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="오른쪽 툴팁">Right</button>
+      <button class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="아래쪽 툴팁">Bottom</button>
+      <hr class="vr">
+      <button class="btn btn-outline-primary" data-bs-toggle="popover" data-bs-title="팝오버 제목" data-bs-content="팝오버 내용이 여기에 표시됩니다.">Popover</button>
+    </div></div>
+  </section>
+
+  <!-- Offcanvas -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Offcanvas</h2>
+    <div class="card"><div class="card-body d-flex flex-wrap gap-3">
+      <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasStart">← Start</button>
+      <button class="btn btn-secondary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnd">End →</button>
+      <button class="btn btn-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom">↓ Bottom</button>
+    </div></div>
+  </section>
+
+  <!-- Typography -->
+  <section class="mb-5">
+    <h2 class="fw-semibold mb-4" style="letter-spacing:-.02em;">Typography &amp; Utilities</h2>
+    <div class="card"><div class="card-body">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <p class="fw-bold fs-3 mb-2" style="background:linear-gradient(135deg,#00c16a,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Gradient Text</p>
+          <p class="mb-2">일반 본문. <strong>굵게</strong>, <em>기울기</em>, <code>인라인 코드</code>, <kbd>Ctrl</kbd>+<kbd>K</kbd></p>
+          <p class="mb-3"><a href="#">링크 텍스트</a> · <span class="text-secondary">보조 텍스트</span></p>
+          <hr>
+          <div class="d-flex gap-2">
+            <button class="btn btn-primary flex-fill btn-sm">확인</button>
+            <button class="btn btn-link flex-fill btn-sm">취소</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <pre><code>const theme = 'nuxtui'
+// NuxtUI v4 CSS tokens
+document.body.style
+  .setProperty('--ui-primary', '#00c16a')</code></pre>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+</main>
+
+<footer class="text-center py-4 border-top text-secondary" style="font-size:.8125rem;">
+  Bootstrap Hero — <strong>NuxtUI v4</strong> Theme &nbsp;·&nbsp;
+  <a href="../index.html" class="text-secondary">← 목록으로</a>
+</footer>
+
+<!-- Modal: Demo -->
+<div class="modal fade" id="modalDemo" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">프로젝트 삭제</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-secondary" style="font-size:.875rem;">이 작업은 되돌릴 수 없습니다. 프로젝트와 관련된 모든 데이터가 영구적으로 삭제됩니다.</p>
+        <div class="alert alert-warning d-flex gap-2 align-items-start mt-3 mb-0" role="alert">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16" style="flex-shrink:0;margin-top:.1rem;"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg>
+          <div style="font-size:.875rem;">삭제하기 전에 반드시 백업을 진행하세요.</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">삭제하기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Form -->
+<div class="modal fade" id="modalForm" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">팀원 초대</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body d-flex flex-column gap-3">
+        <div><label class="form-label">이름</label><input class="form-control" placeholder="홍길동"></div>
+        <div><label class="form-label">이메일</label><input class="form-control" type="email" placeholder="hong@example.com"></div>
+        <div><label class="form-label">역할</label><select class="form-select"><option>Member</option><option>Admin</option><option>Viewer</option></select></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">초대 보내기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="toastMain" class="toast" role="alert">
+    <div class="toast-header">
+      <span class="avatar avatar-xs bg-primary-subtle text-primary me-2">N</span>
+      <strong class="me-auto">NuxtUI</strong>
+      <small class="text-secondary">방금 전</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+    </div>
+    <div class="toast-body">변경사항이 성공적으로 저장되었습니다.</div>
+  </div>
+</div>
+
+<!-- Offcanvas: Start -->
+<div class="offcanvas offcanvas-start" id="offcanvasStart" tabindex="-1">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">사이드 메뉴</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-group-item-action px-0">Dashboard</li>
+      <li class="list-group-item list-group-item-action px-0">Analytics</li>
+      <li class="list-group-item list-group-item-action px-0">Projects</li>
+      <li class="list-group-item list-group-item-action px-0">Team</li>
+      <li class="list-group-item list-group-item-action px-0">Settings</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Offcanvas: End -->
+<div class="offcanvas offcanvas-end" id="offcanvasEnd" tabindex="-1">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">알림</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column gap-3">
+    <div class="alert alert-success d-flex gap-2 align-items-start mb-0" role="alert">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16" style="flex-shrink:0"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+      <div><strong>배포 성공</strong> — v2.3.1이 배포되었습니다.</div>
+    </div>
+    <div class="alert alert-primary d-flex gap-2 align-items-start mb-0" role="alert">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16" style="flex-shrink:0"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/></svg>
+      <div><strong>새 팀원</strong> — Alice가 팀에 합류했습니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Offcanvas: Bottom -->
+<div class="offcanvas offcanvas-bottom" id="offcanvasBottom" tabindex="-1" style="height:280px;">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">필터 옵션</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="row g-3">
+      <div class="col-6 col-md-3">
+        <label class="form-label">상태</label>
+        <select class="form-select"><option>전체</option><option>활성</option><option>비활성</option></select>
+      </div>
+      <div class="col-6 col-md-3">
+        <label class="form-label">역할</label>
+        <select class="form-select"><option>전체</option><option>Admin</option><option>Member</option></select>
+      </div>
+      <div class="col-12 d-flex gap-2 pt-1">
+        <button class="btn btn-primary btn-sm">적용</button>
+        <button class="btn btn-link btn-sm" data-bs-dismiss="offcanvas">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

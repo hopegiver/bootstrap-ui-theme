@@ -1,0 +1,31 @@
+{
+  "name": "bootstrap-ui-theme",
+  "version": "1.0.2",
+  "description": "Bootstrap 5 with HeroUI, shadcn/ui, NuxtUI v4 themes",
+  "main": "dist/heroui.css",
+  "files": [
+    "dist"
+  ],
+  "keywords": ["bootstrap", "theme", "heroui", "shadcn", "nuxtui", "css"],
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev:heroui":      "vite --mode heroui      --root src/heroui",
+    "dev:shadcn":      "vite --mode shadcn      --root src/shadcn",
+    "dev:nuxtui":      "vite --mode nuxtui      --root src/nuxtui",
+    "build:heroui":    "vite build --mode heroui",
+    "build:shadcn":    "vite build --mode shadcn",
+    "build:nuxtui":    "vite build --mode nuxtui",
+    "build": "npm run build:heroui && npm run build:shadcn && npm run build:nuxtui"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "bootstrap": "^5.3.8",
+    "postcss": "^8.5.14",
+    "sass": "^1.99.0",
+    "vite": "^8.0.11"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8"
+  }
+}

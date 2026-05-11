@@ -1,0 +1,217 @@
+// ============================================
+// HeroUI v3-inspired Bootstrap 5 Variable Overrides
+// Color reference: https://heroui.com/docs/customization/colors
+// ============================================
+
+// ── Typography ──────────────────────────────
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-size-base: 0.9375rem; // 15px
+$font-weight-medium: 500;
+$line-height-base: 1.6;
+
+// ── HeroUI v3 Color Palette ─────────────────
+// Primary: HeroUI Blue (#006FEE) — matches heroui.com site's actual blue
+// Secondary: HeroUI Purple (#7828C8)
+$primary:   #006FEE;   // HeroUI Blue-500
+$secondary: #7828C8;   // HeroUI Purple-500
+$success:   #17C964;   // HeroUI Green-500
+$info:      #00B7DB;   // HeroUI Cyan-500
+$warning:   #F5A524;   // HeroUI Yellow-500
+$danger:    #F31260;   // HeroUI Red-500
+$light:     #F4F4F5;   // zinc-100
+$dark:      #11181C;   // HeroUI foreground
+
+// ── Subtle backgrounds (HeroUI *-50/*-100 shades) ──
+$primary-subtle:   #E6F1FD;   // blue-50
+$secondary-subtle: #F4EAFE;   // purple-50
+$success-subtle:   #E8FAF0;   // green-50
+$info-subtle:      #E6F9FB;   // cyan-50
+$warning-subtle:   #FEFCE8;   // yellow-50
+$danger-subtle:    #FEE7EF;   // red-50
+$default-subtle:   #F4F4F5;   // zinc-100
+
+// ── Theme colors map ─────────────────────────
+$theme-colors: (
+  "primary":   $primary,
+  "secondary": $secondary,
+  "success":   $success,
+  "info":      $info,
+  "warning":   $warning,
+  "danger":    $danger,
+  "light":     $light,
+  "dark":      $dark,
+);
+
+// ── Border Radius ───────────────────────────
+$border-radius:       0.75rem;   // 12px — HeroUI "lg"
+$border-radius-sm:    0.5rem;    // 8px  — HeroUI "md"
+$border-radius-lg:    0.875rem;  // 14px — HeroUI "xl"
+$border-radius-xl:    1rem;      // 16px
+$border-radius-2xl:   1.25rem;   // 20px
+$border-radius-pill:  9999px;
+
+// ── Shadows ─────────────────────────────────
+$box-shadow-sm:  0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+$box-shadow:     0 4px 14px rgba(0,0,0,.08), 0 1px 3px rgba(0,0,0,.06);
+$box-shadow-lg:  0 10px 40px rgba(0,0,0,.12), 0 4px 14px rgba(0,0,0,.08);
+
+// ── Spacing ─────────────────────────────────
+$spacer: 1rem;
+
+// ── Borders ─────────────────────────────────
+$border-color:       #E4E4E7;   // zinc-200
+$border-width:       1.5px;
+
+// ── Body ────────────────────────────────────
+$body-bg:            #FFFFFF;
+$body-color:         #11181C;
+$body-secondary-color: #71717A;  // zinc-500
+
+// ── Links ───────────────────────────────────
+$link-color:              $primary;
+$link-decoration:         none;
+$link-hover-decoration:   underline;
+
+// ── Components ──────────────────────────────
+$transition-base:     all 0.2s ease;
+
+// ── Buttons ─────────────────────────────────
+// HeroUI: rounded-3xl = 24px, md height 40px, sm 36px, lg 44px
+$btn-font-weight:         500;
+$btn-border-radius:       1.5rem;   // 24px — HeroUI rounded-3xl
+$btn-border-radius-sm:    1.5rem;
+$btn-border-radius-lg:    1.5rem;
+$btn-padding-y:           0.5625rem;  // ~40px height with line-height
+$btn-padding-x:           1.25rem;
+$btn-padding-y-sm:        0.4375rem;  // ~36px height
+$btn-padding-x-sm:        0.875rem;
+$btn-padding-y-lg:        0.6875rem;  // ~44px height
+$btn-padding-x-lg:        1.5rem;
+$btn-box-shadow:          none;
+$btn-focus-box-shadow:    none;
+$btn-active-box-shadow:   none;
+$btn-transition:          background-color 0.1s ease, box-shadow 0.1s ease, transform 0.25s ease, color 0.1s ease, border-color 0.1s ease;
+
+// ── Inputs ──────────────────────────────────
+$input-border-radius:     $border-radius-lg;
+$input-border-radius-sm:  $border-radius;
+$input-border-radius-lg:  $border-radius-xl;
+$input-border-color:      #E4E4E7;
+$input-focus-border-color: $primary;
+$input-bg:                $body-bg;
+$input-focus-bg:          $body-bg;
+$input-padding-y:         0.625rem;
+$input-padding-x:         1rem;
+$input-font-size:         0.9375rem;
+$input-color:             $body-color;
+$input-placeholder-color: #A1A1AA;   // zinc-400
+$input-box-shadow:        none;
+$input-focus-box-shadow:  0 0 0 3px rgba($primary, 0.15);
+$input-transition:        border-color 0.2s ease, box-shadow 0.2s ease;
+
+// ── Cards ───────────────────────────────────
+$card-border-radius:      $border-radius-xl;
+$card-border-color:       $border-color;
+$card-border-width:       1.5px;
+$card-box-shadow:         $box-shadow;
+$card-spacer-y:           1.5rem;
+$card-spacer-x:           1.5rem;
+$card-cap-bg:             transparent;
+
+// ── Navbar ──────────────────────────────────
+$navbar-padding-y:          0.875rem;
+$navbar-brand-font-size:    1.125rem;
+$navbar-brand-font-weight:  700;
+$navbar-toggler-border-radius: $border-radius;
+
+// ── Badges ──────────────────────────────────
+$badge-font-size:         0.75em;
+$badge-font-weight:       500;
+$badge-border-radius:     $border-radius-pill;
+$badge-padding-y:         0.35em;
+$badge-padding-x:         0.75em;
+
+// ── Modals ──────────────────────────────────
+$modal-content-border-radius:   $border-radius-2xl;
+$modal-content-border-width:    0;
+$modal-content-box-shadow-xs:   $box-shadow-lg;
+$modal-content-box-shadow-sm-up: $box-shadow-lg;
+$modal-backdrop-opacity:        0.5;
+$modal-header-border-width:     0;
+$modal-footer-border-width:     0;
+$modal-inner-padding:           1.75rem;
+
+// ── Dropdowns ───────────────────────────────
+$dropdown-border-radius:    $border-radius-xl;
+$dropdown-border-width:     1.5px;
+$dropdown-border-color:     $border-color;
+$dropdown-box-shadow:       $box-shadow-lg;
+$dropdown-item-border-radius: $border-radius;
+$dropdown-padding-y:        0.5rem;
+$dropdown-padding-x:        0.5rem;
+$dropdown-item-padding-y:   0.5rem;
+$dropdown-item-padding-x:   0.875rem;
+$dropdown-link-hover-bg:    $light;
+$dropdown-link-active-bg:   $primary;
+
+// ── List Groups ─────────────────────────────
+$list-group-border-radius:  $border-radius-xl;
+$list-group-border-color:   $border-color;
+$list-group-item-padding-y: 0.875rem;
+$list-group-item-padding-x: 1.25rem;
+
+// ── Alerts ──────────────────────────────────
+$alert-border-radius:       $border-radius-lg;
+$alert-border-width:        0;
+$alert-padding-y:           1rem;
+$alert-padding-x:           1.25rem;
+
+// ── Progress ────────────────────────────────
+$progress-border-radius:    $border-radius-pill;
+$progress-height:           0.5rem;
+$progress-bg:               #E4E4E7;
+
+// ── Tooltips ────────────────────────────────
+$tooltip-border-radius:     $border-radius;
+$tooltip-bg:                $dark;
+$tooltip-opacity:           0.95;
+
+// ── Popovers ────────────────────────────────
+$popover-border-radius:     $border-radius-xl;
+$popover-border-width:      1.5px;
+$popover-border-color:      $border-color;
+$popover-box-shadow:        $box-shadow-lg;
+
+// ── Tabs / Nav ───────────────────────────────
+$nav-tabs-border-radius:    $border-radius-lg;
+$nav-tabs-border-color:     $border-color;
+$nav-link-padding-y:        0.625rem;
+$nav-link-padding-x:        1rem;
+$nav-link-font-weight:      500;
+
+// ── Pagination ──────────────────────────────
+$pagination-border-radius:  $border-radius-pill;
+$pagination-border-width:   0;
+$pagination-focus-box-shadow: 0 0 0 3px rgba($primary, 0.15);
+
+// ── Accordion ───────────────────────────────
+$accordion-border-radius:       $border-radius-xl;
+$accordion-inner-border-radius: $border-radius-xl;
+$accordion-button-active-bg:    $primary-subtle;
+$accordion-button-active-color: $primary;
+
+// ── Tables ──────────────────────────────────
+$table-border-color:        #D1D5DB;   // gray-300 — 테이블 선 강조
+$table-striped-bg:          rgba($light, 0.5);
+$table-hover-bg:            rgba($primary, 0.04);
+
+// ── Offcanvas ───────────────────────────────
+$offcanvas-border-width:    0;
+$offcanvas-box-shadow:      $box-shadow-lg;
+
+// ── Toast ────────────────────────────────────
+$toast-border-radius:       $border-radius-xl;
+$toast-border-width:        1.5px;
+$toast-border-color:        $border-color;
+$toast-box-shadow:          $box-shadow-lg;
+$toast-header-bg:           transparent;

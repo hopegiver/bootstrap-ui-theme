@@ -1,0 +1,50 @@
+// ============================================
+// NuxtUI v4 Design Tokens
+// ============================================
+
+// ── Typography ──────────────────────────────
+$nuxtui-font-family:    'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$nuxtui-font-size-base: 0.875rem;   // 14px
+$nuxtui-line-height:    1.5;
+
+// ── Color Palette ────────────────────────────
+$nuxtui-primary:          #00c16a;
+$nuxtui-primary-fg:       #ffffff;
+
+$nuxtui-secondary:        #0f172a;   // slate-900 — NuxtUI neutral solid
+$nuxtui-error:            #ef4444;
+$nuxtui-warning:          #f59e0b;
+$nuxtui-success:          #22c55e;
+$nuxtui-info:             #3b82f6;
+
+// ── Semantic Tokens (Light mode) ─────────────
+// bg
+$nuxtui-bg:              #ffffff;    // bg-default
+$nuxtui-bg-elevated:     #f8fafc;   // bg-elevated  (slate-50)
+// text
+$nuxtui-fg:              #0f172a;   // text-highlighted (slate-900)
+$nuxtui-fg-muted:        #64748b;   // text-muted       (slate-500)
+$nuxtui-fg-dimmed:       #94a3b8;   // text-dimmed      (slate-400)
+$nuxtui-fg-subtle:       #334155;   // text-default     (slate-700)
+// border
+$nuxtui-border:          #e2e8f0;   // border-default   (slate-200)
+$nuxtui-border-accented: #cbd5e1;   // border-accented  (slate-300)
+
+// ── Dark mode tokens (for reference in components) ──
+$nuxtui-dark-bg:              #020617;   // slate-950
+$nuxtui-dark-bg-elevated:     #0f172a;   // slate-900
+$nuxtui-dark-border:          #1e293b;   // slate-800
+$nuxtui-dark-border-accented: #334155;   // slate-700
+$nuxtui-dark-fg:              #f8fafc;   // slate-50
+$nuxtui-dark-fg-muted:        #94a3b8;   // slate-400
+$nuxtui-dark-fg-subtle:       #e2e8f0;   // slate-200
+
+// ── Border Radius ────────────────────────────
+$nuxtui-radius-sm:  0.125rem;  // 2px  — rounded-sm
+$nuxtui-radius:     0.375rem;  // 6px  — rounded-md  (default)
+$nuxtui-radius-lg:  0.5rem;    // 8px  — rounded-lg
+$nuxtui-radius-xl:  0.75rem;   // 12px — rounded-xl
+
+// ── Shadows (floating elements only) ────────
+$nuxtui-shadow-sm: 0 1px 2px 0 rgba(0,0,0,.05);
+$nuxtui-shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1);

@@ -1,0 +1,65 @@
+// ============================================
+// Bootstrap Hero - NuxtUI v4 Theme Entry
+// ============================================
+
+@import 'variables';
+
+// ── Bootstrap variable overrides ─────────────
+// Typography
+$font-family-sans-serif: $nuxtui-font-family;
+$font-size-base:         $nuxtui-font-size-base;
+$line-height-base:       $nuxtui-line-height;
+
+// Colors — Bootstrap uses these to derive bg-*-subtle, text-*, border-* etc.
+$primary:   $nuxtui-primary;
+$secondary: $nuxtui-secondary;
+$success:   $nuxtui-success;
+$info:      $nuxtui-info;
+$warning:   $nuxtui-warning;
+$danger:    $nuxtui-error;
+$light:     $nuxtui-bg-elevated;
+$dark:      $nuxtui-fg;
+
+// Body
+$body-bg:              $nuxtui-bg;
+$body-color:           $nuxtui-fg;
+$body-secondary-color: $nuxtui-fg-muted;
+
+// Borders
+$border-color:      $nuxtui-border;
+$border-width:      1px;
+$border-radius:     $nuxtui-radius;
+$border-radius-sm:  $nuxtui-radius-sm;
+$border-radius-lg:  $nuxtui-radius-lg;
+$border-radius-xl:  $nuxtui-radius-xl;
+$border-radius-pill: 9999px;
+
+// Buttons
+$btn-border-radius:     $nuxtui-radius;
+$btn-border-radius-sm:  $nuxtui-radius;
+$btn-border-radius-lg:  $nuxtui-radius;
+$btn-font-weight:       500;
+$btn-box-shadow:        none;
+$btn-focus-box-shadow:  none;
+$btn-active-box-shadow: none;
+
+// Inputs
+$input-border-radius:      $nuxtui-radius;
+$input-border-color:       $nuxtui-border;
+$input-focus-border-color: $nuxtui-primary;
+$input-bg:                 $nuxtui-bg;
+$input-box-shadow:         none;
+$input-focus-box-shadow:   none;
+
+// Cards — no shadow, thin border
+$card-border-radius: $nuxtui-radius-lg;
+$card-border-color:  $nuxtui-border;
+$card-border-width:  1px;
+$card-box-shadow:    none;
+
+// Badges
+$badge-border-radius: $nuxtui-radius;
+$badge-font-weight:   500;
+
+@import 'bootstrap/scss/bootstrap';
+@import 'components';
